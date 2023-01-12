@@ -3,3 +3,5 @@ node_modules
 .vscode
 .embold
 .DS_Store
+build
+package-lock.json
