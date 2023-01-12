@@ -5,5 +5,5 @@ export const getAllCatsService = () => {
 };
 
 export const getCatByNameService = (name: string) => {
-  return catData.find((cat) => cat.name?.toLowerCase() === name);
-};
+    return catData.find((cat) => cat.name?.toLowerCase() === name);
+  };

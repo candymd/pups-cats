@@ -1,4 +1,4 @@
-import { getAllCatsService, getCatByNameService } from "../services/cats/getAllCats";
+import { getAllCatsService, getCatByNameService } from "../services/cats";
 import { Request, Response } from "express";
 
 export const getAllCats = (_request: Request, response: Response) => {
