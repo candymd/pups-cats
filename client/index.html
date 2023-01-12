@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pups&Cats</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/getCats.js"></script>
+    <script src="./scripts/getDogs.js"></script>
+  </head>
+  <body>
+    <h1>Pups&Cats</h1>
+    <p>Here are some cute pups and cats!</p>
+
+    <div id="pups-container">
+      <h2>Pups</h2>
+      <div id="pups"></div>
+    </div>
+    <div id="cats-container">
+      <h2>Cats</h2>
+      <div id="cats"></div>
+    </div>
+
+    <script>
+      const catsResponse = getAllCats();
+      catsResponse.then((cats) => {
+        cats.forEach((cat) => {
+          const catDiv = document.getElementById("cats");
+          const nameImageContainer = document.createElement("div");
+          nameImageContainer.id = "cat-name-image";
+          const catImg = document.createElement("img");
+          const catName = document.createElement("p");
+          catName.innerText = cat?.name;
+          catImg.src = cat?.image;
+          catDiv.appendChild(nameImageContainer);
+          nameImageContainer.appendChild(catImg);
+          nameImageContainer.appendChild(catName);
+        });
+      });
+    </script>
+
+    <script>
+      const pupsResponse = getAllDogs();
+      pupsResponse.then((pups) => {
+        pups.forEach((pup) => {
+          const pupDiv = document.getElementById("pups");
+          const nameImageContainer = document.createElement("div");
+          nameImageContainer.id = "pup-name-image";
+          const pupImg = document.createElement("img");
+          const pupName = document.createElement("p");
+          pupName.innerText = pup?.name;
+          pupImg.src = pup?.image;
+          pupDiv.appendChild(nameImageContainer);
+          nameImageContainer.appendChild(pupImg);
+          nameImageContainer.appendChild(pupName);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+#cats-container,
+#pups-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#cats,
+#pups {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#cat-name-image,
+#pup-name-image {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10px;
+
+}
+#cat-name-image > img,
+#pup-name-image > img {
+  width: 500px;
+  height: 500px;
+}
